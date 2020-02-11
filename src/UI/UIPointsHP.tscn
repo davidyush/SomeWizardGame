@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://default_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/frames/flask_red.png" type="Texture" id=2]
+[ext_resource path="res://src/UI/UIPointsHP.gd" type="Script" id=3]
+[ext_resource path="res://assets/ui/label_bg.png" type="Texture" id=4]
+
+[node name="UIPointsHP" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.03125
+margin_top = 0.15625
+margin_right = -170.031
+margin_bottom = -93.8438
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0.568627 )
+margin_top = 2.0
+margin_right = 19.0
+margin_bottom = 8.0
+grow_horizontal = 0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect"]
+margin_left = -0.65625
+margin_top = -3.9375
+margin_right = 15.3438
+margin_bottom = 12.0625
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PotionsCount" type="Label" parent="NinePatchRect"]
+margin_left = 9.0
+margin_right = 18.0
+margin_bottom = 6.0
+custom_fonts/font = ExtResource( 1 )
+text = "1"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

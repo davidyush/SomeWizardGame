@@ -1,0 +1,38 @@
+[gd_resource type="ParticlesMaterial" load_steps=7 format=2]
+
+[ext_resource path="res://src/Effects/GradientDeath.tres" type="Gradient" id=1]
+
+[sub_resource type="GradientTexture" id=1]
+gradient = ExtResource( 1 )
+
+[sub_resource type="Curve" id=2]
+min_value = -200.0
+max_value = 400.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=3]
+curve = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.993197, 0.0366217 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[resource]
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 90.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 0.2
+linear_accel_curve = SubResource( 3 )
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 1 )

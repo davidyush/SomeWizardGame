@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Effects/Expl.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Effects/FireExplosion.gd" type="Script" id=2]
+[ext_resource path="res://src/Effects/ExplosionRed.tres" type="Material" id=3]
+
+[node name="RedExplosion" instance=ExtResource( 1 )]
+amount = 100
+lifetime = 0.6
+explosiveness = 0.6
+process_material = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="Light2D" parent="." index="0"]
+position = Vector2( 0.0883865, 0 )
+color = Color( 1, 0.00392157, 0.192157, 1 )
+energy = 0.8
+
+[node name="Timer" parent="." index="1"]
+wait_time = 0.4
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/ui/label_bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/frames/coin_anim_f0.png" type="Texture" id=2]
+[ext_resource path="res://default_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://src/Items/CoinsUI.gd" type="Script" id=4]
+
+[node name="CoinsUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0.568627 )
+margin_right = 19.0
+margin_bottom = 6.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CoinsIcon" type="NinePatchRect" parent="NinePatchRect"]
+margin_left = -0.173591
+margin_top = -1.33767
+margin_right = 39.8264
+margin_bottom = 38.6623
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="CoinsCount" type="Label" parent="NinePatchRect"]
+margin_left = 8.94444
+margin_top = 1.13333
+margin_right = 16.9444
+margin_bottom = 6.13334
+custom_fonts/font = ExtResource( 3 )
+text = "2"

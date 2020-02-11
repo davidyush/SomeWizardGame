@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/ui/label_bg.png" type="Texture" id=1]
+[ext_resource path="res://default_font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://src/UI/SpellUI.gd" type="Script" id=7]
+[ext_resource path="res://src/Spells/Animations/FireBallAnimation.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Spells/Animations/FrostBallAnimation.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Spells/Animations/DeathBallAnimation.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Spells/Animations/PoisonBallAnimation.tscn" type="PackedScene" id=11]
+
+[node name="SpellUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 6.0
+margin_right = 35.0
+margin_bottom = 12.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FireBallAnimation" parent="NinePatchRect" instance=ExtResource( 8 )]
+position = Vector2( 2, 0 )
+rotation = 3.83972
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" parent="NinePatchRect/FireBallAnimation" index="1"]
+position = Vector2( -11.0241, -3.80372 )
+scale = Vector2( 1, 1 )
+frame = 59
+
+[node name="FrostBallAnimation" parent="NinePatchRect" instance=ExtResource( 9 )]
+position = Vector2( 2, 0.5 )
+rotation = 3.83972
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" parent="NinePatchRect/FrostBallAnimation" index="0"]
+position = Vector2( -21.9953, 8.01287 )
+
+[node name="PoisonBallAnimation" parent="NinePatchRect" instance=ExtResource( 11 )]
+position = Vector2( 20, 5 )
+rotation = 3.83972
+scale = Vector2( 0.5, 0.5 )
+
+[node name="DeathBallAnimation" parent="NinePatchRect" instance=ExtResource( 10 )]
+position = Vector2( 27, 5 )
+rotation = 3.83972
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FireLabel" type="Label" parent="NinePatchRect"]
+margin_top = 4.0
+margin_right = 4.0
+margin_bottom = 9.0
+custom_fonts/font = ExtResource( 6 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FrostLabel" type="Label" parent="NinePatchRect"]
+margin_left = 8.0
+margin_top = 4.0
+margin_right = 12.5
+margin_bottom = 9.0
+custom_fonts/font = ExtResource( 6 )
+text = "2"
+
+[node name="PoisonLabel" type="Label" parent="NinePatchRect"]
+margin_left = 16.0
+margin_top = 4.0
+margin_right = 21.0
+margin_bottom = 9.0
+custom_fonts/font = ExtResource( 6 )
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeathLabel" type="Label" parent="NinePatchRect"]
+margin_left = 23.0
+margin_top = 4.0
+margin_right = 30.0
+margin_bottom = 9.0
+custom_fonts/font = ExtResource( 6 )
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[editable path="NinePatchRect/FireBallAnimation"]
+
+[editable path="NinePatchRect/FrostBallAnimation"]

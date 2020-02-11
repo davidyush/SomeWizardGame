@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://default_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/frames/flask_blue.png" type="Texture" id=2]
+[ext_resource path="res://src/UI/UIPotiontsMana.gd" type="Script" id=3]
+[ext_resource path="res://assets/ui/label_bg.png" type="Texture" id=4]
+
+[node name="UIPotionsMana" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0.568627 )
+margin_right = 19.0
+margin_bottom = 6.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect"]
+margin_left = -1.25025
+margin_top = -3.89201
+margin_right = 14.7498
+margin_bottom = 12.108
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PotionsCount" type="Label" parent="NinePatchRect"]
+margin_left = 8.6768
+margin_top = 1.44654
+margin_right = 13.6768
+margin_bottom = 7.44654
+custom_fonts/font = ExtResource( 1 )
+text = "1"
