@@ -29,7 +29,4 @@ func _on_viewport_exited(viewport: Viewport) -> void:
 func walking(delta: float):
 	.walking(delta)
 	
-	velocity = move_and_slide(
-		CreatureUtils.get_walk_velocity(current_move, SPEED, direction),
-		Vector2.ZERO
-	)
+	velocity = move_and_slide(CreatureUtils.get_walk_velocity(current_move, SPEED, direction))

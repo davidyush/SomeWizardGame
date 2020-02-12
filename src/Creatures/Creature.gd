@@ -55,7 +55,8 @@ func _on_PoisonTimer_timeout() -> void:
 
 
 func _on_FreezeTimer_timeout() -> void:
-	inside_state.freezed = false 
+	inside_state.freezed = false
+	animPlayer.playback_speed = 1
 
 
 func get_dmg(damage_amount: int) -> void:
@@ -73,6 +74,7 @@ func get_poisoned(poison: Dictionary):
 
 func get_frosted(freeze_time: int):
 	inside_state.freezed = true
+	animPlayer.playback_speed = animPlayer.playback_speed / 2
 	freezeTimer.start(freeze_time)
 
 
