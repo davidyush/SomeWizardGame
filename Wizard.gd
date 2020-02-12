@@ -174,10 +174,10 @@ func _physics_process(delta: float) -> void:
 func get_dmg(dmg):
 	PlayerStats.health -= dmg
 
-func get_poisoned(poison_dmg):
+func get_poisoned(poison):
 	poisoned = true
-	yield(get_tree().create_timer(2.0), "timeout")
-	get_dmg(poison_dmg)
+	yield(get_tree().create_timer(poison.delay), "timeout")
+	get_dmg(poison.damage)
 	poisoned = false
 
 func get_frosted(freeze_time):
@@ -195,8 +195,8 @@ func _on_Hurtbox_hit(damage_obj) -> void:
 			blinkAnimation.play("blink")
 			invincible = true
 			invTimer.start()
-		if damage_obj.has('poison_damage') and not poisoned:
-			get_poisoned(damage_obj.poison_damage)
+		if damage_obj.has('poison') and not poisoned:
+			get_poisoned(damage_obj.poison)
 		if damage_obj.has('freeze_time') and not freezed:
 			get_frosted(damage_obj.freeze_time)
 
