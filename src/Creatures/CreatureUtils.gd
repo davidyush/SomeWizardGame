@@ -1,5 +1,11 @@
 extends Node
 
+const GREEN = Color8(0, 255, 0, 255)
+const YELLOW = Color8(255, 255, 0, 255)
+const BLUE = Color8(0, 0, 255, 255)
+const NOT_COLORED = Color8(255, 255, 255, 255)
+
+
 func get_walk_velocity(move: String, speed: int, direction: int) -> Vector2:
 	match move:
 		'horizontal':
@@ -23,22 +29,26 @@ func get_diagonal_walk_velocity(move: String, speed: int, direction: int) -> Vec
 func get_rand_elem(options: Array) -> String:
 	return options[rand_range(0, options.size())]
 
-	
+
 func get_state_color(state: Dictionary) -> Color:
 	if state.poisoned and state.freezed:
-		return Color8(255, 255, 0, 255)
+		return YELLOW
 	elif state.poisoned:
-		return Color8(0, 255, 0, 255)
+		return GREEN
 	elif state.freezed:
-		return Color8(0, 0, 255, 255)
+		return BLUE
 	
-	return Color8(255, 255, 255, 255)
+	return NOT_COLORED
 
 
-func chase_object(object: KinematicBody2D, delta: float, position: Vector2, speed: int) -> Vector2:
-	var velocity = Vector2.ZERO
-	if object != null:
-		var direction = (object.global_position - position)
-		velocity += direction * speed * delta
-		velocity = velocity.clamped(speed * rand_range(1.1, 1.6))
+func chase_object(
+	object: KinematicBody2D,
+	delta: float,
+	position: Vector2,
+	speed: int,
+	velocity: Vector2
+	) -> Vector2:
+	var direction = object.global_position - position
+	velocity += (direction * speed * delta)
+	velocity = velocity.clamped(speed * rand_range(1.3, 1.5))
 	return velocity
