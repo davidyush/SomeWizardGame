@@ -10,6 +10,16 @@ func get_walk_velocity(move: String, speed: int, direction: int) -> Vector2:
 	return Vector2.ZERO
 
 
+func get_diagonal_walk_velocity(move: String, speed: int, direction: int) -> Vector2:
+	match move:
+		'to_up_right':
+			return Vector2(speed * direction, speed * direction)
+		'to_bottom_left':
+			return Vector2(speed * -direction, speed * direction)
+	
+	return Vector2.ZERO
+
+
 func get_rand_elem(options: Array) -> String:
 	return options[rand_range(0, options.size())]
 
@@ -30,5 +40,5 @@ func chase_object(object: KinematicBody2D, delta: float, position: Vector2, spee
 	if object != null:
 		var direction = (object.global_position - position)
 		velocity += direction * speed * delta
-		velocity = velocity.clamped(speed * rand_range(1.3, 1.7))
+		velocity = velocity.clamped(speed * rand_range(1.1, 1.6))
 	return velocity

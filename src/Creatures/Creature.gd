@@ -23,17 +23,21 @@ func set_hp(value: int) -> void:
 func _ready() -> void:
 	set_physics_process(false)
 
+
 # warning-ignore:unused_argument
 func _physics_process(delta: float) -> void:
 	modulate = CreatureUtils.get_state_color(inside_state)
+
 	
 # warning-ignore:unused_argument
 func _on_viewport_entered(viewport: Viewport) -> void:
 	set_physics_process(true)
 
+
 # warning-ignore:unused_argument
 func _on_viewport_exited(viewport: Viewport) -> void:
 	set_physics_process(false)
+
 
 func _on_Hurtbox_hit(damage: Dictionary) -> void:
 	if damage.has('pure_damage'):
@@ -43,28 +47,34 @@ func _on_Hurtbox_hit(damage: Dictionary) -> void:
 	if damage.has('freeze_time'):
 		get_frosted(damage.freeze_time)
 
+
 func _on_PoisonTimer_timeout() -> void:
 	get_dmg(poison_dmg)
 	inside_state.poisoned = false
 	poison_dmg = 0
 
+
 func _on_FreezeTimer_timeout() -> void:
 	inside_state.freezed = false 
+
 
 func get_dmg(damage_amount: int) -> void:
 	Utils.instance_scene_on_main(BloodSpot, global_position)
 	health -= damage_amount
 	if health <= 0:
 		dead()
-		
+
+
 func get_poisoned(poison: Dictionary):
 	inside_state.poisoned = true
 	poison_dmg = poison.damage
 	poisonTimer.start(poison.delay)
 
+
 func get_frosted(freeze_time: int):
 	inside_state.freezed = true
 	freezeTimer.start(freeze_time)
+
 
 func dead() -> void:
 	set_physics_process(false)
