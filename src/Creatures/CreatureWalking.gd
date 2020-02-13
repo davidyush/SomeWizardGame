@@ -22,6 +22,7 @@ func walking(delta: float) -> void:
 		direction *= -1
 		
 	sprite.flip_h = false if direction == 1 else true
+	velocity = move_and_slide(CreatureUtils.get_walk_velocity(current_move, SPEED, direction))
 
 func get_frosted(freeze_time: int):
 	SPEED = SPEED / 1.5

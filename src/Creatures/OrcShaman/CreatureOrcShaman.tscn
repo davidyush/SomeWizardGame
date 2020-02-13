@@ -1,0 +1,151 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://src/Creatures/CreatureWalking.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/frames/orc_shaman_idle_anim_f0.png" type="Texture" id=2]
+[ext_resource path="res://src/Creatures/OrcShaman/CreatureOrcShamanCollider.tres" type="Shape2D" id=3]
+[ext_resource path="res://assets/frames/orc_shaman_run_anim_f1.png" type="Texture" id=4]
+[ext_resource path="res://assets/frames/orc_shaman_run_anim_f2.png" type="Texture" id=5]
+[ext_resource path="res://assets/frames/orc_shaman_run_anim_f0.png" type="Texture" id=6]
+[ext_resource path="res://assets/frames/orc_shaman_run_anim_f3.png" type="Texture" id=7]
+[ext_resource path="res://assets/frames/orc_shaman_idle_anim_f1.png" type="Texture" id=8]
+[ext_resource path="res://assets/frames/orc_shaman_idle_anim_f2.png" type="Texture" id=9]
+[ext_resource path="res://assets/frames/orc_shaman_idle_anim_f3.png" type="Texture" id=10]
+[ext_resource path="res://src/BoxColliders/PlayerDetector.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Creatures/OrcShaman/CreatureOrcShaman.gd" type="Script" id=12]
+[ext_resource path="res://src/Enemies/Bullet.tscn" type="PackedScene" id=13]
+
+[sub_resource type="Animation" id=3]
+resource_name = "die"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "fire"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "nope"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "run"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ) ]
+}
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( -4, 10, -4, 9, 5, 9, 5, 10 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 5, 7 )
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 63.0079
+
+[node name="CreatureOrcShaman" instance=ExtResource( 1 )]
+script = ExtResource( 12 )
+MAX_SPEED = 50
+moves = [ "horizontal", "vertical", "to_up_right", "to_bottom_left" ]
+Bullet = ExtResource( 13 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 1, 3 )
+shape = ExtResource( 3 )
+
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = "nope"
+anims/die = SubResource( 3 )
+anims/fire = SubResource( 4 )
+anims/nope = SubResource( 5 )
+anims/run = SubResource( 6 )
+
+[node name="LightOccluder2D" parent="." index="3"]
+occluder = SubResource( 1 )
+
+[node name="Hurtbox" parent="." index="4"]
+visible = false
+
+[node name="Collider" parent="Hurtbox" index="0"]
+position = Vector2( 1, 3 )
+shape = SubResource( 8 )
+
+[node name="Hitbox" parent="." index="5"]
+visible = false
+damage_obj = {
+"pure_damage": 2
+}
+
+[node name="Collider" parent="Hitbox" index="0"]
+position = Vector2( 1, 3 )
+shape = ExtResource( 3 )
+
+[node name="VisibilityNotifier2D" parent="." index="6"]
+position = Vector2( 1, 3 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="PlayerDetector" parent="." index="10" instance=ExtResource( 11 )]
+
+[node name="CollisionShape2D" parent="PlayerDetector" index="0"]
+position = Vector2( 1, 3 )
+shape = SubResource( 7 )
+
+[node name="StrikeTimer" type="Timer" parent="." index="11"]
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_PlayerDetector_body_exited"]
+[connection signal="timeout" from="StrikeTimer" to="." method="_on_StrikeTimer_timeout"]
+
+[editable path="Hurtbox"]
+
+[editable path="Hitbox"]
+
+[editable path="PlayerDetector"]

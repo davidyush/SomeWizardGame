@@ -44,11 +44,6 @@ func _on_PlayerDetector_body_exited(body: Node) -> void:
 	state = WALKING
 
 
-func walking(delta: float) -> void:
-	.walking(delta)
-	velocity = move_and_slide(CreatureUtils.get_walk_velocity(current_move, SPEED, direction))
-
-
 func chasing(delta: float) -> void:
 	var player = MainInstances.Player
 	sprite.flip_h = global_position > player.global_position

@@ -43,7 +43,22 @@ func chase_object(
 	velocity: Vector2,
 	acceleration: float = 1.3
 	) -> Vector2:
-	var direction = object.global_position - position
-	velocity += (direction * speed * delta)
-	velocity = velocity.clamped(speed * acceleration)
-	return velocity
+		var direction = object.global_position - position
+		velocity += (direction * speed * delta)
+		velocity = velocity.clamped(speed * acceleration)
+		return velocity
+
+func strike_to_target(
+	target: KinematicBody2D,
+	striker: KinematicBody2D,
+	delta: float,
+	bullet: PackedScene,
+	speed: int
+	) -> void:
+		var direction = target.global_position - striker.position
+		var bullet_velocity = direction * speed * delta
+		var bullet_instance = bullet.instance()
+		bullet_instance.set_bullet(direction, bullet_velocity)
+		get_parent().add_child(bullet_instance)
+		bullet_instance.position = striker.global_position
+	
