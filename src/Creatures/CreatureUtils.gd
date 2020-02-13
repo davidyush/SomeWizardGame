@@ -12,12 +12,6 @@ func get_walk_velocity(move: String, speed: int, direction: int) -> Vector2:
 			return Vector2(speed * direction, 0)
 		'vertical':
 			return Vector2(0, speed * direction)
-	
-	return Vector2.ZERO
-
-
-func get_diagonal_walk_velocity(move: String, speed: int, direction: int) -> Vector2:
-	match move:
 		'to_up_right':
 			return Vector2(speed * direction, speed * direction)
 		'to_bottom_left':

@@ -96,7 +96,7 @@ shape = SubResource( 5 )
 [node name="Hitbox" parent="." index="5"]
 visible = false
 damage_obj = {
-"pure_damage": 1
+"pure_damage": 2
 }
 
 [node name="Collider" parent="Hitbox" index="0"]

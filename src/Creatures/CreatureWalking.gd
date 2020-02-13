@@ -24,5 +24,5 @@ func walking(delta: float) -> void:
 	sprite.flip_h = false if direction == 1 else true
 
 func get_frosted(freeze_time: int):
-	SPEED = SPEED / 3
+	SPEED = SPEED / 1.5
 	.get_frosted(freeze_time)

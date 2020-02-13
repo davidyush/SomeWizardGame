@@ -74,7 +74,7 @@ func get_poisoned(poison: Dictionary):
 
 func get_frosted(freeze_time: int):
 	inside_state.freezed = true
-	animPlayer.playback_speed = animPlayer.playback_speed / 2
+	animPlayer.playback_speed = animPlayer.playback_speed / 1.5
 	freezeTimer.start(freeze_time)
 
 

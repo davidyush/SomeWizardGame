@@ -7,11 +7,6 @@
 [node name="CreatureChasing" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
-[node name="Hitbox" parent="." index="5"]
-damage_obj = {
-"pure_damage": 1
-}
-
 [node name="PlayerDetector" parent="." index="10" instance=ExtResource( 2 )]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
 [connection signal="body_exited" from="PlayerDetector" to="." method="_on_PlayerDetector_body_exited"]
