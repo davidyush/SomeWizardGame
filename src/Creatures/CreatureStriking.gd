@@ -13,7 +13,7 @@ enum {
 }
 
 var state = IDLE
-var can_fire = false
+var can_fire = true
 
 func _physics_process(delta: float) -> void:
 	var player = MainInstances.Player
@@ -38,8 +38,6 @@ func _on_PlayerDetector_body_entered(body: Node) -> void:
 
 func _on_PlayerDetector_body_exited(body: Node) -> void:
 	state = WALKING
-	can_fire = true
-	strikeTimer.stop()
 
 
 func _on_viewport_entered(viewport: Viewport) -> void:

@@ -74,7 +74,6 @@ extents = Vector2( 5, 7 )
 
 [node name="Necromancer" instance=ExtResource( 2 )]
 MAX_HP = 100
-SPEED = 45
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 9 )

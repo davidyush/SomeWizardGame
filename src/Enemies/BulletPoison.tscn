@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/redBall.png" type="Texture" id=1]
 [ext_resource path="res://src/Enemies/Bullet.gd" type="Script" id=2]
 [ext_resource path="res://src/BoxColliders/Hitbox.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/Effects/RedExplosion.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Effects/PoisonCast.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0
@@ -25,16 +25,19 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.631373, 0.631373, 1 ), Color( 0.992157, 0.54902, 0.54902, 1 ), Color( 1, 0.462745, 0.462745, 1 ), Color( 1, 0.329412, 0.329412, 1 ), Color( 1, 0.117647, 0.117647, 1 ), Color( 1, 0, 0, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.196078, 1, 0, 1 ), Color( 0, 1, 0.0862745, 1 ), Color( 0, 1, 0.529412, 1 ), Color( 0.560784, 1, 0.227451, 1 ), Color( 0.0588235, 1, 0.203922, 1 ), Color( 0.0156863, 0.537255, 0, 1 ) ]
 }
 
-[node name="Bullet" type="Area2D"]
+[node name="BulletPoison" type="Area2D"]
+modulate = Color( 0.101961, 1, 0, 1 )
+self_modulate = Color( 0, 1, 0.180392, 1 )
 collision_layer = 0
 collision_mask = 3
 script = ExtResource( 2 )
 Explosion = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.0156863, 0.537255, 0, 1 )
 scale = Vector2( 0.02, 0.02 )
 texture = ExtResource( 1 )
 
@@ -46,7 +49,11 @@ shape = SubResource( 1 )
 visible = false
 collision_mask = 16
 damage_obj = {
-"pure_damage": 2
+"poison": {
+"damage": 5,
+"delay": 2.0
+},
+"pure_damage": 1
 }
 
 [node name="Collider" parent="Hitbox" index="0"]

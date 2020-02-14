@@ -67,9 +67,6 @@ extents = Vector2( 4, 5 )
 radius = 26.0192
 
 [node name="CreatureTinyZombie" instance=ExtResource( 2 )]
-z_index = 3
-collision_layer = 4
-collision_mask = 7
 moves = [ "to_up_right", "to_bottom_left" ]
 
 [node name="Sprite" parent="." index="0"]
@@ -116,11 +113,6 @@ visible = false
 [node name="CollisionShape2D" parent="PlayerDetector" index="0"]
 position = Vector2( 1, 3 )
 shape = SubResource( 6 )
-[connection signal="hit" from="Hurtbox" to="." method="_on_Hurtbox_hit"]
-[connection signal="viewport_entered" from="VisibilityNotifier2D" to="." method="_on_viewport_entered"]
-[connection signal="viewport_exited" from="VisibilityNotifier2D" to="." method="_on_viewport_exited"]
-[connection signal="timeout" from="PoisonTimer" to="." method="_on_PoisonTimer_timeout"]
-[connection signal="timeout" from="FreezeTimer" to="." method="_on_FreezeTimer_timeout"]
 
 [editable path="Hurtbox"]
 

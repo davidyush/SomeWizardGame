@@ -1,7 +1,6 @@
 extends Area2D
 
-const Explosion = preload("res://src/Effects/RedExplosion.tscn")
-
+export (PackedScene) var Explosion = null
 
 var velocity: = Vector2.ZERO
 var direction: = Vector2.ZERO

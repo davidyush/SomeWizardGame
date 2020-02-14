@@ -1,69 +1,16 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Levels/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/World/Columnus.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Creatures/OrcShaman/CreatureOrcShaman.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Creatures/Swampy/CreatureSwampy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Torch.tscn" type="PackedScene" id=4]
 [ext_resource path="res://FaterWall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/World/Spikes.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/shader.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Creatures/OrcShaman/CreatureOrcShaman.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Items/ManaPotion.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Items/HealthPotion.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Items/Coin.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/NextLevel.tscn" type="PackedScene" id=11]
-
-[sub_resource type="Shader" id=1]
-code = "shader_type canvas_item;
-
-//uniform vec3 color = vec3(0.35, 0.48, 0.95);
-uniform vec3 color = vec3(0.0, 2.65, 0.0);
-uniform int OCTAVES = 10;
-
-float rand(vec2 coord){
-	return fract(sin(dot(coord, vec2(56, 78)) * 1000.0) * 1000.0);
-}
-
-float noise(vec2 coord) {
-	vec2 i = floor(coord);
-	vec2 f = fract(coord);
-	
-	float a = rand(i);
-	float b = rand(i + vec2(1.0, 0.0));
-	float c = rand(i + vec2(0.0, 1.0));
-	float d = rand(i + vec2(1.0, 1.0));
-	
-	vec2 cubic = f * f * (3.0 - 2.0 * f);
-	
-	return mix(a, b, f.x) + (c - a) * f.y * (1.0 - f.x) + (d - b) * f.x * f.y;
-}
-
-float fbm(vec2 coord) {
-	float value = 0.0;
-	float scale = 0.5;
-	
-	for(int i = 0; i < OCTAVES; i++) {
-		value +=  noise(coord) * scale;
-		coord *= 2.0;
-		scale *= 0.5;
-	}
-	return value;
-}
-
-
-void fragment() {
-	vec2 coord = UV * 20.0;
-	
-	vec2 motion = vec2( fbm(coord + vec2(TIME * -0.4, TIME * 0.4)) );
-	float final = fbm(coord + motion);
-	
-	COLOR = vec4(color, final * 0.3);
-}"
-
-[sub_resource type="ShaderMaterial" id=2]
-resource_local_to_scene = true
-shader = SubResource( 1 )
-shader_param/color = Vector3( 0.5, 0.5, 1 )
-shader_param/OCTAVES = 1
 
 [node name="LevelZero" instance=ExtResource( 1 )]
 
@@ -87,31 +34,24 @@ tile_data = PoolIntArray( -589770, 536870913, 0, -589735, 536870913, 0, -524234,
 tile_data = PoolIntArray( -2359242, 0, 0, -2359207, 0, 0, -589687, 0, 0, -589645, 0, 0, -327661, 0, 0, -65357, 1073741825, 0, -65351, 1, 0, 196697, 1073741824, 0, 983129, 0, 0, 983177, 0, 0, 983219, 1, 0, 983225, 1073741825, 0, 1048665, 0, 0, 1572883, 1073741824, 0, 1572918, 0, 0, 1769609, 1073741824, 0, 1769651, 1073741825, 0, 3604534, 1610612736, 0 )
 
 [node name="Torch" parent="Light" index="0" instance=ExtResource( 4 )]
-visible = false
 position = Vector2( 176, -11 )
 
 [node name="Torch2" parent="Light" index="1" instance=ExtResource( 4 )]
-visible = false
 position = Vector2( 225, -11 )
 
 [node name="Torch3" parent="Light" index="2" instance=ExtResource( 4 )]
-visible = false
 position = Vector2( 268, -11 )
 
 [node name="Torch4" parent="Light" index="3" instance=ExtResource( 4 )]
-visible = false
 position = Vector2( 507, 20 )
 
 [node name="Torch5" parent="Light" index="4" instance=ExtResource( 4 )]
-visible = false
 position = Vector2( 571, 20 )
 
 [node name="Torch6" parent="Light" index="5" instance=ExtResource( 4 )]
-visible = false
 position = Vector2( 632, 20 )
 
 [node name="Torch7" parent="Light" index="6" instance=ExtResource( 4 )]
-visible = false
 position = Vector2( 684, 20 )
 
 [node name="Columnus" parent="Items" index="0" instance=ExtResource( 2 )]
@@ -210,29 +150,32 @@ position = Vector2( 825, -3 )
 [node name="Coin12" parent="Items" index="31" instance=ExtResource( 10 )]
 position = Vector2( 846, -3 )
 
-[node name="CreatureOrcShaman" parent="Enemies" index="0" instance=ExtResource( 3 )]
-position = Vector2( 328, -61 )
+[node name="CreatureSwampy" parent="Enemies" index="0" instance=ExtResource( 3 )]
+position = Vector2( 315, -75 )
 
-[node name="CreatureOrcShaman2" parent="Enemies" index="1" instance=ExtResource( 3 )]
-position = Vector2( 377, -36 )
+[node name="CreatureSwampy2" parent="Enemies" index="1" instance=ExtResource( 3 )]
+position = Vector2( 411, -60 )
 
-[node name="CreatureOrcShaman3" parent="Enemies" index="2" instance=ExtResource( 3 )]
-position = Vector2( 390, 63 )
+[node name="CreatureSwampy3" parent="Enemies" index="2" instance=ExtResource( 3 )]
+position = Vector2( 396, 52 )
 
-[node name="CreatureOrcShaman4" parent="Enemies" index="3" instance=ExtResource( 3 )]
-position = Vector2( 378, 120 )
+[node name="CreatureSwampy4" parent="Enemies" index="3" instance=ExtResource( 3 )]
+position = Vector2( 379, 131 )
 
-[node name="CreatureOrcShaman5" parent="Enemies" index="4" instance=ExtResource( 3 )]
-position = Vector2( 329, 153 )
+[node name="CreatureSwampy5" parent="Enemies" index="4" instance=ExtResource( 3 )]
+position = Vector2( 320, 158 )
 
-[node name="CreatureOrcShaman6" parent="Enemies" index="5" instance=ExtResource( 3 )]
-position = Vector2( 395, 156 )
+[node name="CreatureOrcShaman" parent="Enemies" index="5" instance=ExtResource( 7 )]
+position = Vector2( 387, -116 )
 
-[node name="CreatureOrcShaman7" parent="Enemies" index="6" instance=ExtResource( 3 )]
-position = Vector2( 298, 95 )
+[node name="CreatureOrcShaman2" parent="Enemies" index="6" instance=ExtResource( 7 )]
+position = Vector2( 355, -8 )
 
-[node name="CreatureOrcShaman8" parent="Enemies" index="7" instance=ExtResource( 3 )]
-position = Vector2( 416, -70 )
+[node name="CreatureOrcShaman3" parent="Enemies" index="7" instance=ExtResource( 7 )]
+position = Vector2( 411, 107 )
+
+[node name="CreatureOrcShaman4" parent="Enemies" index="8" instance=ExtResource( 7 )]
+position = Vector2( 340, 128 )
 
 [node name="Wizard" parent="." index="6"]
 position = Vector2( 144, 48 )
@@ -278,9 +221,5 @@ position = Vector2( 567, 55 )
 [node name="NextLevel" parent="." index="9" instance=ExtResource( 11 )]
 position = Vector2( 904, 40 )
 target_stage = "res://src/Levels/Level03.tscn"
-
-[node name="shader" parent="." index="10" instance=ExtResource( 7 )]
-visible = false
-material = SubResource( 2 )
 
 [editable path="Wizard"]

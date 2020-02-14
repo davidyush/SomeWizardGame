@@ -48,6 +48,7 @@ func chase_object(
 		velocity = velocity.clamped(speed * acceleration)
 		return velocity
 
+
 func strike_to_target(
 	target: KinematicBody2D,
 	striker: KinematicBody2D,
@@ -61,4 +62,3 @@ func strike_to_target(
 		bullet_instance.set_bullet(direction, bullet_velocity)
 		get_parent().add_child(bullet_instance)
 		bullet_instance.position = striker.global_position
-	
