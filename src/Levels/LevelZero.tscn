@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/Levels/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/World/Columnus.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://src/Items/HealthPotion.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Items/Coin.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/NextLevel.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Creatures/IceZombie/CreatureIceZombie.tscn" type="PackedScene" id=12]
 
 [node name="LevelZero" instance=ExtResource( 1 )]
 
@@ -156,26 +157,26 @@ position = Vector2( 315, -75 )
 [node name="CreatureSwampy2" parent="Enemies" index="1" instance=ExtResource( 3 )]
 position = Vector2( 411, -60 )
 
-[node name="CreatureSwampy3" parent="Enemies" index="2" instance=ExtResource( 3 )]
-position = Vector2( 396, 52 )
-
-[node name="CreatureSwampy4" parent="Enemies" index="3" instance=ExtResource( 3 )]
-position = Vector2( 379, 131 )
-
-[node name="CreatureSwampy5" parent="Enemies" index="4" instance=ExtResource( 3 )]
-position = Vector2( 320, 158 )
-
-[node name="CreatureOrcShaman" parent="Enemies" index="5" instance=ExtResource( 7 )]
+[node name="CreatureOrcShaman" parent="Enemies" index="2" instance=ExtResource( 7 )]
 position = Vector2( 387, -116 )
 
-[node name="CreatureOrcShaman2" parent="Enemies" index="6" instance=ExtResource( 7 )]
+[node name="CreatureOrcShaman2" parent="Enemies" index="3" instance=ExtResource( 7 )]
 position = Vector2( 355, -8 )
 
-[node name="CreatureOrcShaman3" parent="Enemies" index="7" instance=ExtResource( 7 )]
-position = Vector2( 411, 107 )
+[node name="CreatureIceZombie" parent="Enemies" index="4" instance=ExtResource( 12 )]
+position = Vector2( 395, 104 )
 
-[node name="CreatureOrcShaman4" parent="Enemies" index="8" instance=ExtResource( 7 )]
-position = Vector2( 340, 128 )
+[node name="CreatureIceZombie2" parent="Enemies" index="5" instance=ExtResource( 12 )]
+position = Vector2( 323, 157 )
+
+[node name="CreatureIceZombie3" parent="Enemies" index="6" instance=ExtResource( 12 )]
+position = Vector2( 400, 165 )
+
+[node name="CreatureIceZombie4" parent="Enemies" index="7" instance=ExtResource( 12 )]
+position = Vector2( 347, 119 )
+
+[node name="CreatureIceZombie5" parent="Enemies" index="8" instance=ExtResource( 12 )]
+position = Vector2( 349, 40 )
 
 [node name="Wizard" parent="." index="6"]
 position = Vector2( 144, 48 )
@@ -185,7 +186,7 @@ position = Vector2( 5.96046e-07, 3 )
 
 [node name="Camera2D" parent="." index="7"]
 position = Vector2( 144, 48 )
-zoom = Vector2( 1.8, 1.8 )
+zoom = Vector2( 1.2, 1.2 )
 limit_left = 80
 limit_top = -160
 limit_right = 912

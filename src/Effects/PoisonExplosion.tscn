@@ -5,6 +5,7 @@
 [ext_resource path="res://src/Effects/ExplosionPoison.tres" type="Material" id=3]
 
 [node name="PoisonExplosion" instance=ExtResource( 1 )]
+amount = 100
 process_material = ExtResource( 3 )
 script = ExtResource( 2 )
 

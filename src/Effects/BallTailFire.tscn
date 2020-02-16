@@ -1,19 +1,19 @@
 [gd_scene load_steps=6 format=2]
 
-[sub_resource type="Gradient" id=3]
+[sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.329268, 0.691057, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 0.966487, 0.0408998, 1, 0.792282, 0, 0, 1, 0.25322, 0, 0, 1 )
 
 [sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 3 )
+gradient = SubResource( 1 )
 
-[sub_resource type="Curve" id=4]
+[sub_resource type="Curve" id=3]
 _data = [ Vector2( 0.0102041, 0.986487 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0315316 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=5]
-curve = SubResource( 4 )
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=1]
+[sub_resource type="ParticlesMaterial" id=5]
 emission_shape = 2
 emission_box_extents = Vector3( 0, 0, 2 )
 flag_disable_z = true
@@ -26,12 +26,13 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 5.0
 scale_random = 1.0
-scale_curve = SubResource( 5 )
+scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
 
 [node name="BallTailFire" type="Particles2D"]
 amount = 40
 lifetime = 3.0
+preprocess = 3.0
 speed_scale = 10.0
 local_coords = false
-process_material = SubResource( 1 )
+process_material = SubResource( 5 )
