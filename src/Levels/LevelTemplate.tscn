@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Levels/LevelTemplate.gd" type="Script" id=1]
 [ext_resource path="res://src/Map/WallHoriz.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/Floor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Wizard.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/World/WorldCamera.tscn" type="PackedScene" id=9]
 
 [node name="LevelTemplate" type="Node"]
 script = ExtResource( 1 )
@@ -38,10 +39,11 @@ cell_size = Vector2( 5, 4 )
 position = Vector2( 0, 0 )
 
 [node name="CameraFollow" parent="Wizard" index="7"]
-remote_path = NodePath("../../Camera2D")
+remote_path = NodePath("../../WorldCamera")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="WorldCamera" parent="." instance=ExtResource( 9 )]
 current = true
+zoom = Vector2( 1.2, 1.2 )
 smoothing_enabled = true
 smoothing_speed = 7.0
 

@@ -41,7 +41,6 @@ tracks/1/keys = {
 }
 
 [node name="FireWall" type="Area2D"]
-z_index = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

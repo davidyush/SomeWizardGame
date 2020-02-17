@@ -173,6 +173,7 @@ func _physics_process(delta: float) -> void:
 
 func get_dmg(dmg):
 	PlayerStats.health -= dmg
+	Events.emit_signal("add_screen_shake", 0.75, 0.25)
 
 func get_poisoned(poison):
 	poisoned = true

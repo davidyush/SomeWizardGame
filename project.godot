@@ -35,6 +35,7 @@ config/icon="res://icon.png"
 ResourceLoader="*res://ResourceLoader.gd"
 Utils="*res://Utils.gd"
 CreatureUtils="*res://src/Creatures/CreatureUtils.gd"
+Events="*res://Events.gd"
 
 [display]
 

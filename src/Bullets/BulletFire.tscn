@@ -16,7 +16,7 @@ colors = PoolColorArray( 0.50415, 0, 0, 1, 0.418213, 0.264038, 0, 1, 0.980713, 0
 gradient = SubResource( 3 )
 
 [sub_resource type="Curve" id=5]
-_data = [ Vector2( 0, 0.432714 ), 0.0, 0.0, 0, 0, Vector2( 0.967836, 0.0453266 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0.24134 ), 0.0, 0.0, 0, 0, Vector2( 0.967836, 0.0453266 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=6]
 curve = SubResource( 5 )
@@ -55,6 +55,7 @@ shape = SubResource( 2 )
 
 [node name="Particles2D" type="Particles2D" parent="." index="4"]
 amount = 20
+lifetime = 0.5
 speed_scale = 2.0
 local_coords = false
 process_material = SubResource( 7 )
