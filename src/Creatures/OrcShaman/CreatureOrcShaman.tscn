@@ -12,7 +12,7 @@
 [ext_resource path="res://assets/frames/orc_shaman_idle_anim_f3.png" type="Texture" id=10]
 [ext_resource path="res://src/BoxColliders/PlayerDetector.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Creatures/CreatureStriking.gd" type="Script" id=12]
-[ext_resource path="res://src/Enemies/Bullet.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Bullets/BulletFire.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "die"

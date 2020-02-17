@@ -9,10 +9,10 @@
 [ext_resource path="res://assets/frames/ice_zombie_idle_anim_f3.png" type="Texture" id=7]
 [ext_resource path="res://assets/frames/ice_zombie_idle_anim_f1.png" type="Texture" id=8]
 [ext_resource path="res://assets/frames/ice_zombie_run_anim_f3.png" type="Texture" id=9]
-[ext_resource path="res://src/Enemies/BulletFrost.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Bullets/BulletFrost.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Creatures/IceZombie/CreatureIceZombieCollider.tres" type="Shape2D" id=11]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "die"
 length = 0.5
 tracks/0/type = "value"
@@ -26,6 +26,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true, false, true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fire"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 7 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -61,27 +78,10 @@ tracks/0/keys = {
 "values": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 9 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "strike"
-length = 0.4
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 7 ) ]
-}
-
-[sub_resource type="OccluderPolygon2D" id=6]
+[sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( -5, 8, -5, 7, 5, 7, 5, 8 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 4, 7 )
 
 [sub_resource type="CircleShape2D" id=7]
@@ -91,7 +91,7 @@ radius = 55.0
 Bullet = ExtResource( 10 )
 
 [node name="Sprite" parent="." index="0"]
-texture = ExtResource( 7 )
+texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, 1 )
@@ -99,17 +99,17 @@ shape = ExtResource( 11 )
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "nope"
-anims/die = SubResource( 2 )
+anims/die = SubResource( 1 )
+anims/fire = SubResource( 2 )
 anims/nope = SubResource( 3 )
 anims/run = SubResource( 4 )
-anims/strike = SubResource( 5 )
 
 [node name="LightOccluder2D" parent="." index="3"]
-occluder = SubResource( 6 )
+occluder = SubResource( 5 )
 
 [node name="Collider" parent="Hurtbox" index="0"]
 position = Vector2( 0, 1 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 
 [node name="Hitbox" parent="." index="5"]
 damage_obj = {

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/BoxColliders/Hitbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Bullets/BulletSimple.gd" type="Script" id=2]
+
+[node name="BulletSimple" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Hitbox" parent="." instance=ExtResource( 1 )]
+collision_mask = 16
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_BulletSimple_body_entered"]
+
+[editable path="Hitbox"]
