@@ -1,25 +1,19 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/Floor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Wall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/AdditionToWall.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/Column.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Blood.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Torch.tscn" type="PackedScene" id=6]
 [ext_resource path="res://FireWall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://FaterWall.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/Enemies/Goblin.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/Enemies/IceZombie.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/shader.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Wizard.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/MarginContainer.gd" type="Script" id=13]
 [ext_resource path="res://default_font.tres" type="DynamicFont" id=14]
 [ext_resource path="res://src/NextLevel.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Level01.gd" type="Script" id=16]
-[ext_resource path="res://src/Enemies/Demon.tscn" type="PackedScene" id=17]
-[ext_resource path="res://src/Enemies/Zombie.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=19]
-[ext_resource path="res://src/Enemies/Imp.tscn" type="PackedScene" id=20]
 [ext_resource path="res://src/World/Spikes.tscn" type="PackedScene" id=21]
 
 [sub_resource type="Shader" id=1]
@@ -105,20 +99,6 @@ collision_layer = 2
 collision_mask = 8
 tile_data = PoolIntArray( -1, 536870916, 0, -65480, 3, 0, -65465, 3, 0, -65416, 536870915, 0, 65535, 536870916, 0, 56, 3, 0, 71, 3, 0, 120, 536870915, 0, 131071, 536870916, 0, 65592, 3, 0, 65607, 3, 0, 65656, 536870915, 0, 196607, 536870916, 0, 131192, 536870915, 0, 262143, 536870916, 0, 196728, 536870915, 0, 327679, 536870916, 0, 262264, 536870915, 0, 393215, 536870916, 0, 327800, 536870915, 0, 458751, 536870916, 0, 393272, 536870915, 0, 393287, 3, 0, 393336, 536870915, 0, 524287, 536870916, 0, 458808, 536870915, 0, 458823, 3, 0, 458872, 536870915, 0, 589823, 536870916, 0, 524344, 536870915, 0, 524359, 3, 0, 524408, 536870915, 0, 655359, 5, 0, 589839, 4, 0, 589852, 4, 0, 589880, 5, 0, 589895, 5, 0, 589915, 536870916, 0, 589928, 4, 0, 589944, 5, 0, 655375, 536870915, 0, 655388, 536870915, 0, 655451, 3, 0, 655464, 536870915, 0, 720911, 536870915, 0, 720924, 536870915, 0, 720987, 3, 0, 721000, 536870915, 0, 786447, 536870915, 0, 786460, 536870915, 0, 786523, 3, 0, 786536, 536870915, 0, 917503, 536870916, 0, 852024, 536870916, 0, 852039, 536870916, 0, 852088, 536870915, 0, 983039, 536870916, 0, 917560, 536870916, 0, 917575, 536870916, 0, 917624, 536870915, 0, 1048575, 536870916, 0, 983096, 5, 0, 983111, 5, 0, 983160, 536870915, 0, 1114111, 536870916, 0, 1048696, 536870915, 0, 1179647, 536870916, 0, 1114232, 536870915, 0, 1245183, 536870916, 0, 1179768, 536870915, 0, 1310719, 536870916, 0, 1245240, 536870916, 0, 1245255, 536870916, 0, 1245304, 536870915, 0, 1376255, 536870916, 0, 1310776, 536870916, 0, 1310791, 536870916, 0, 1310840, 536870915, 0, 1441791, 5, 0, 1376312, 5, 0, 1376327, 5, 0, 3342336, 536870919, 0, 3342337, 536870919, 0, 3342338, 536870919, 0, 3342339, 536870919, 0, 3342343, 536870919, 0, 3342344, 536870919, 0, 3342345, 536870919, 0, 3342346, 536870919, 0, 3342347, 536870919, 0, 3342348, 536870919, 0, 3342349, 536870919, 0, 3342354, 536870919, 0, 3342355, 536870919, 0, 3342356, 536870919, 0, 3342357, 536870919, 0, 3342358, 536870919, 0, 3342362, 536870919, 0, 3342363, 536870919, 0, 3342364, 536870919, 0, 3342365, 536870919, 0 )
 
-[node name="ColumnUp" parent="Map" instance=ExtResource( 4 )]
-position = Vector2( -16, 4 )
-cell_size = Vector2( 16, 12 )
-tile_data = PoolIntArray( 24, 0, 0, 262148, 0, 0, 262154, 0, 0, 393242, 0, 0, 458773, 0, 0, 1048579, 3, 0, 1048587, 3, 0, 1048596, 3, 0, 1048604, 3, 0, 1245210, 0, 0, 1441794, 0, 0, 1441799, 0, 0, 1441816, 0, 0, 1507339, 0, 0, 1507349, 0, 0 )
-
-[node name="ColumnDown" parent="Map" instance=ExtResource( 4 )]
-z_index = 1
-cell_size = Vector2( 16, 8 )
-tile_data = PoolIntArray( 262167, 4, 0, 655363, 4, 0, 655369, 4, 0, 786457, 4, 0, 917524, 4, 0, 1835010, 4, 0, 1835018, 4, 0, 1835027, 4, 0, 1835035, 4, 0, 2097177, 4, 0, 2359297, 4, 0, 2359302, 4, 0, 2359319, 4, 0, 2490378, 4, 0, 2490388, 4, 0 )
-
-[node name="ColumnMiddle" parent="Map" instance=ExtResource( 4 )]
-cell_size = Vector2( 16, 16 )
-tile_data = PoolIntArray( 65559, 1, 0, 262147, 1, 0, 262153, 1, 0, 327705, 1, 0, 393236, 1, 0, 983065, 1, 0, 1114113, 1, 0, 1114118, 1, 0, 1114135, 1, 0, 1179658, 1, 0, 1179668, 1, 0 )
-
 [node name="TileMap" parent="Map" instance=ExtResource( 5 )]
 cell_size = Vector2( 16, 16 )
 tile_data = PoolIntArray( -65536, 0, 0, -65524, 1, 0, -65514, 1, 0, 65540, 4, 0, 65548, 7, 0, 131093, 7, 0, 131099, 10, 0, 196618, 9, 0, 196635, 11, 0, 262145, 6, 0, 262161, 6, 0, 327685, 2, 0, 327686, 3, 0, 458776, 10, 0, 524292, 5, 0, 524312, 11, 0, 589852, 1, 0, 786456, 12, 0, 851968, 0, 0, 851992, 11, 0, 983051, 10, 0, 983054, 0, 0, 983057, 1, 0, 983067, 6, 0, 1048587, 11, 0, 1048597, 8, 0, 1114120, 12, 0, 1114128, 9, 0, 1179656, 11, 0, 1179660, 10, 0, 1179673, 7, 0, 1245186, 8, 0, 1245196, 11, 0 )
@@ -182,7 +162,6 @@ position = Vector2( 72, -24 )
 position = Vector2( 152, -24 )
 
 [node name="fog" parent="." instance=ExtResource( 11 )]
-visible = false
 material = SubResource( 2 )
 position = Vector2( 240, 168 )
 scale = Vector2( 4, 3.125 )
@@ -240,39 +219,6 @@ position = Vector2( 440, 280 )
 target_stage = "res://src/Level02.tscn"
 
 [node name="Enemies" type="Node" parent="."]
-
-[node name="Goblin5" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 306.188, 74.454 )
-
-[node name="Goblin6" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 85.8161, 206.265 )
-
-[node name="Goblin10" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 322.81, 72.028 )
-
-[node name="IceZombie" parent="Enemies" instance=ExtResource( 10 )]
-position = Vector2( 72.832, 271.883 )
-collision_mask = 15
-
-[node name="IceZombie2" parent="Enemies" instance=ExtResource( 10 )]
-position = Vector2( 140.361, 259.508 )
-collision_mask = 15
-
-[node name="Demon" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 353.553, 278.954 )
-collision_mask = 15
-
-[node name="Zombie" parent="Enemies" instance=ExtResource( 18 )]
-position = Vector2( 377.949, 60.4576 )
-collision_mask = 15
-
-[node name="Zombie2" parent="Enemies" instance=ExtResource( 18 )]
-position = Vector2( 444.063, 96.8736 )
-collision_mask = 15
-
-[node name="Imp" parent="Enemies" instance=ExtResource( 20 )]
-position = Vector2( 277.352, 55.1452 )
-collision_mask = 15
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 92, 25 )

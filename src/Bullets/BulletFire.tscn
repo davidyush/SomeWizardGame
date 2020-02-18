@@ -50,7 +50,6 @@ damage_obj = {
 }
 
 [node name="Collider" parent="Hitbox" index="0"]
-visible = false
 shape = SubResource( 2 )
 
 [node name="Particles2D" type="Particles2D" parent="." index="4"]

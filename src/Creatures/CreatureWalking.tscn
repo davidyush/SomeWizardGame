@@ -5,6 +5,7 @@
 
 [node name="CreatureWalking" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+MAX_HP = 20
 
 [node name="DirectionTimer" type="Timer" parent="." index="7"]
 wait_time = 2.0

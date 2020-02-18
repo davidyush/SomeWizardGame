@@ -6,6 +6,8 @@
 
 [node name="CreatureStriking" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+MAX_HP = 30
+MAX_SPEED = 10
 
 [node name="StrikeTimer" type="Timer" parent="." index="10"]
 

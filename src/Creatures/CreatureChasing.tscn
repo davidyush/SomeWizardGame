@@ -6,6 +6,8 @@
 
 [node name="CreatureChasing" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+MAX_HP = 25
+MAX_SPEED = 30
 
 [node name="PlayerDetector" parent="." index="10" instance=ExtResource( 2 )]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]

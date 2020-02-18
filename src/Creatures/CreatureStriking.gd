@@ -57,6 +57,6 @@ func _on_StrikeTimer_timeout() -> void:
 func strike(delta: float, player: KinematicBody2D) -> void:
 	if can_fire == true and player != null:
 		sprite.flip_h = global_position > player.global_position
-		CreatureUtils.strike_to_target(player, self, delta, Bullet, 60)
+		CreatureUtils.strike_to_target(player, self, delta, Bullet, 70)
 		can_fire = false
 

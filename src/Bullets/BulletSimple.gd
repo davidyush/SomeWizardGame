@@ -1,6 +1,7 @@
 extends Area2D
 
 export (PackedScene) var Explosion = null
+export (float) var speed = 10
 
 var velocity: = Vector2.ZERO
 var direction: = Vector2.ZERO

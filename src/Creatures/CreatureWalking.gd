@@ -1,13 +1,19 @@
 extends "res://src/Creatures/Creature.gd"
 
 export (int) var direction = 1
-export (int) var MAX_SPEED = 40
+export (int) var MAX_SPEED = 20
+
 export (Array) var moves = ['horizontal', 'vertical']
 
-var SPEED = MAX_SPEED
+
 var velocity = Vector2.ZERO
 var current_move = CreatureUtils.get_rand_elem(moves)
+var SPEED = MAX_SPEED
 
+func _ready() -> void:
+	._ready()
+	var SPEED = MAX_SPEED
+	print(SPEED)
 
 func _on_DirectionTimer_timeout() -> void:
 	current_move = CreatureUtils.get_rand_elem(moves)

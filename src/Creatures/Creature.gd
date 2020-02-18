@@ -14,7 +14,7 @@ var inside_state = {
 
 var poison_dmg = 0
 
-export (int) var MAX_HP = 20
+export (int) var MAX_HP
 var health = MAX_HP setget set_hp
 
 func set_hp(value: int) -> void:
@@ -22,6 +22,7 @@ func set_hp(value: int) -> void:
 
 func _ready() -> void:
 	set_physics_process(false)
+	health = MAX_HP
 
 
 # warning-ignore:unused_argument
