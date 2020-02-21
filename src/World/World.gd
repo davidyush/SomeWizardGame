@@ -7,8 +7,9 @@ onready var camera = $WorldCamera
 
 #should get this values dinamicaly
 const lims = {
-	"res://src/LevelsB/LevelB_00.tscn": [-10, -160, 705, 150],
+	"res://src/LevelsB/LevelB_00.tscn": [-10, -160, 750, 150],
 	"res://src/LevelsB/LevelB_01.tscn": [-48, -24, 416, 336],
+	"res://src/LevelsB/LevelB_02.tscn": [-64, -230, 688, 288]
 }
 
 func set_camera_limits(limits_arr: Array) -> void:
@@ -28,8 +29,8 @@ func _ready() -> void:
 	VisualServer.set_default_clear_color(Color.black)
 	MainInstances.Player.connect('hit_door', self, '_on_Player_hit_door')
 
-	var current_limits = get_current_limits(currentLevel.global_position, lims["res://src/LevelsB/LevelB_00.tscn"])
-	set_camera_limits(current_limits)
+	#var current_limits = get_current_limits(currentLevel.global_position, lims["res://src/LevelsB/LevelB_00.tscn"])
+	#set_camera_limits(current_limits)
 
 func change_levels(door):
 	var offset = currentLevel.position
@@ -42,8 +43,8 @@ func change_levels(door):
 	newLevel.position = door.position - exit_position
 	
 	#set limit camera
-	var current_limits = get_current_limits(newLevel.position, lims[door.new_level_path])
-	set_camera_limits(current_limits)
+	#var current_limits = get_current_limits(newLevel.position, lims[door.new_level_path])
+	#set_camera_limits(current_limits)
 
 
 func get_door_with_connection(notDoor, connection):

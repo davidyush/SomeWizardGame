@@ -85,7 +85,7 @@ polygon = PoolVector2Array( -7, 8, -7, 7, 7, 7, 7, 8 )
 extents = Vector2( 7, 6 )
 
 [sub_resource type="CircleShape2D" id=7]
-radius = 47.0
+radius = 73.0
 
 [node name="CreatureSwampy" instance=ExtResource( 1 )]
 Bullet = ExtResource( 11 )

@@ -56,7 +56,7 @@ func strike_to_target(
 	bullet: PackedScene,
 	speed: int
 	) -> void:
-		var direction = target.global_position - striker.position
+		var direction = target.global_position - striker.global_position
 		var bullet_velocity = direction * speed * delta
 		var bullet_instance = bullet.instance()
 		bullet_instance.set_bullet(direction, bullet_velocity)

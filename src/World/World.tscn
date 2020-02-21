@@ -10,7 +10,7 @@
 script = ExtResource( 4 )
 
 [node name="WorldCamera" parent="." instance=ExtResource( 1 )]
-position = Vector2( 29.398, -6.53191 )
+position = Vector2( 680.999, -0.875034 )
 current = true
 zoom = Vector2( 1.2, 1.2 )
 smoothing_enabled = true
@@ -18,12 +18,12 @@ smoothing_speed = 7.0
 
 [node name="UI" parent="." instance=ExtResource( 3 )]
 
+[node name="LevelB_00" parent="." instance=ExtResource( 5 )]
+
 [node name="Wizard" parent="." instance=ExtResource( 2 )]
-position = Vector2( 29.398, -6.53191 )
+position = Vector2( 680.999, -0.875034 )
 
 [node name="CameraFollow" parent="Wizard" index="7"]
 remote_path = NodePath("../../WorldCamera")
-
-[node name="LevelB_00" parent="." instance=ExtResource( 5 )]
 
 [editable path="Wizard"]
