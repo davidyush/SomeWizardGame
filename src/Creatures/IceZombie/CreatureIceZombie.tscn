@@ -124,9 +124,6 @@ shape = ExtResource( 11 )
 [node name="VisibilityNotifier2D" parent="." index="6"]
 visible = false
 
-[node name="PlayerDetector" parent="." index="11"]
-visible = false
-
 [node name="CollisionShape2D" parent="PlayerDetector" index="0"]
 shape = SubResource( 7 )
 

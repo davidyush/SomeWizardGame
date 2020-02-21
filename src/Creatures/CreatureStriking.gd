@@ -9,7 +9,7 @@ onready var strikeTimer = $StrikeTimer
 enum {
 	IDLE,
 	WALKING,
-	STRKING
+	STRIKING
 }
 
 var state = IDLE
@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 		WALKING:
 			walking(delta)
 			animPlayer.play('run')
-		STRKING:
+		STRIKING:
 			animPlayer.play('fire')
 			strike(delta, player)
 			
@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_PlayerDetector_body_entered(body: Node) -> void:
-	state = STRKING
+	state = STRIKING
 	strikeTimer.start()
 
 

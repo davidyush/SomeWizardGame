@@ -64,7 +64,7 @@ polygon = PoolVector2Array( 5, 8, 5, 7, -3, 7, -3, 8 )
 extents = Vector2( 4, 5 )
 
 [sub_resource type="CircleShape2D" id=6]
-radius = 26.0192
+radius = 63.0
 
 [node name="CreatureTinyZombie" instance=ExtResource( 2 )]
 moves = [ "to_up_right", "to_bottom_left" ]

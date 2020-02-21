@@ -66,6 +66,7 @@ extents = Vector2( 8, 6 )
 
 [node name="CreatureMuddy" instance=ExtResource( 1 )]
 script = ExtResource( 8 )
+MAX_SPEED = 35
 moves = [ "to_up_right", "to_bottom_left" ]
 
 [node name="Sprite" parent="." index="0"]

@@ -66,6 +66,8 @@ extents = Vector2( 5, 5 )
 
 [node name="CreatureGoblin" instance=ExtResource( 1 )]
 script = ExtResource( 8 )
+MAX_HP = 25
+MAX_SPEED = 40
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
@@ -94,7 +96,7 @@ shape = SubResource( 5 )
 [node name="Hitbox" parent="." index="5"]
 visible = false
 damage_obj = {
-"pure_damage": 1
+"pure_damage": 2
 }
 
 [node name="Collider" parent="Hitbox" index="0"]

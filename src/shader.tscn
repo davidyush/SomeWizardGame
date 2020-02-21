@@ -6,8 +6,8 @@
 code = "shader_type canvas_item;
 
 //uniform vec3 color = vec3(0.35, 0.48, 0.95);
-uniform vec3 color = vec3(0.0, 2.65, 0.0);
-uniform int OCTAVES = 10;
+uniform vec3 color = vec3(1.0, 1.0, 1.0);
+uniform int OCTAVES = 1;
 
 float rand(vec2 coord){
 	return fract(sin(dot(coord, vec2(56, 78)) * 1000.0) * 1000.0);
@@ -52,11 +52,11 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
 shader = SubResource( 1 )
-shader_param/color = Vector3( 0, 2.65, 0 )
-shader_param/OCTAVES = 10
+shader_param/color = Vector3( 1, 1.05, 1 )
+shader_param/OCTAVES = 1
 
 [node name="shader" type="Sprite"]
 material = SubResource( 2 )
-position = Vector2( 623.547, 9.70455 )
-scale = Vector2( 9.7751, 2.88816 )
+position = Vector2( 621.249, -19.2869 )
+scale = Vector2( 9.81101, 2.43517 )
 texture = ExtResource( 1 )

@@ -43,8 +43,8 @@ func chase_object(
 	velocity: Vector2,
 	acceleration: float = 1.3
 	) -> Vector2:
-		var direction = (object.global_position - position).normalized()
-		velocity += (direction * speed * delta).normalized()
+		var direction = (object.global_position - position)
+		velocity += (direction * speed * delta)
 		velocity = velocity.clamped(speed * acceleration)
 		return velocity
 

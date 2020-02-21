@@ -60,7 +60,7 @@ anims/idle = SubResource( 1 )
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
-texture_scale = 0.55
+texture_scale = 0.75
 color = Color( 0.992157, 0.980392, 0.207843, 1 )
 shadow_enabled = true
 shadow_filter = 5

@@ -7,6 +7,10 @@ enum {
 
 var state = IDLE
 
+func _ready() -> void:
+	._ready()
+	SPEED = MAX_SPEED
+
 func _physics_process(delta: float) -> void:
 	match state:
 		IDLE:

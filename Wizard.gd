@@ -52,6 +52,8 @@ var can_fire = true
 var freezed = false
 var poisoned = false
 
+signal hit_door(door)
+
 func set_invincible(value: bool) -> void:
 	invincible = value
 

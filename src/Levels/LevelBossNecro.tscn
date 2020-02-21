@@ -22,14 +22,20 @@ tile_data = PoolIntArray( -262145, 1, 0, -327626, 1, 0, 3407871, 1073741824, 0, 
 
 [node name="Necromancer" parent="Enemies" index="0" instance=ExtResource( 1 )]
 position = Vector2( 140.008, 26.8701 )
-z_index = 3
-collision_layer = 4
-collision_mask = 7
 
 [node name="Wizard" parent="." index="5"]
 position = Vector2( 94.3988, 122.329 )
 
+[node name="Light2D" parent="Wizard" index="6"]
+position = Vector2( 1.00763, -0.11453 )
+
 [node name="WorldCamera" parent="." index="6"]
 position = Vector2( 94.3988, 122.329 )
+zoom = Vector2( 1.4, 1.4 )
+limit_left = -10
+limit_top = -30
+limit_right = 280
+limit_bottom = 230
+limit_smoothed = true
 
 [editable path="Wizard"]

@@ -1,22 +1,11 @@
-extends StaticBody2D
+extends Area2D
 
-onready var anim = $AnimationPlayer
-onready var doorCol = $Collision
+export(Resource) var connection = null
+export(String, FILE, '*.tscn') var new_level_path = ""
+var active = true
 
-var state_disabled = false
-var state_index = 0
-#func _ready() -> void:
-#	setDoorState('open', 3)
 
-func setDoorState(animation, index):
-	anim.play(animation)
-	state_disabled = !state_disabled
-	doorCol.disabled = state_disabled
-	set_physics_process(!state_disabled)
-	z_index = index
-	
-func _on_ActiveZone_body_entered(body: Node) -> void:
-	setDoorState('open', 3)
-
-func _on_ActiveZone_body_exited(body: Node) -> void:
-	setDoorState('close', 0)
+func _on_Door_body_entered(Player) -> void:
+	if active == true:
+		Player.emit_signal('hit_door', self)
+		active = false

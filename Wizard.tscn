@@ -102,7 +102,7 @@ tracks/1/keys = {
 polygon = PoolVector2Array( 5.50382, 13.7786, -1.49619, 13.7786, -4.49618, 13.7786, -4.49618, 14.7786, 0.503815, 14.7786, 5.50382, 14.7786 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 6, 9 )
+extents = Vector2( 7, 10 )
 
 [node name="Wizard" type="KinematicBody2D"]
 position = Vector2( -1.00763, -6.88547 )
@@ -139,6 +139,7 @@ position = Vector2( 0.503815, -7.8931 )
 occluder = SubResource( 6 )
 
 [node name="Light2D" type="Light2D" parent="."]
+visible = false
 position = Vector2( 1.00763, -0.11453 )
 texture = ExtResource( 5 )
 texture_scale = 0.2
@@ -158,7 +159,7 @@ collision_layer = 16
 
 [node name="Collider" parent="Hurtbox" index="0"]
 modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 1.00763, -2.11453 )
+position = Vector2( 1.00763, -1.11453 )
 shape = SubResource( 7 )
 
 [node name="InvTimer" type="Timer" parent="."]

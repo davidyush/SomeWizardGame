@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/light.png" type="Texture" id=1]
 [ext_resource path="res://assets/effects/HolyExplosion_96x96.png" type="Texture" id=2]
+[ext_resource path="res://src/BoxColliders/Hitbox.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
@@ -33,6 +34,9 @@ tracks/1/keys = {
 } ]
 }
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 35.0
+
 [node name="Sprite" type="Sprite"]
 texture = ExtResource( 2 )
 hframes = 28
@@ -47,3 +51,14 @@ anims/idle = SubResource( 1 )
 texture = ExtResource( 1 )
 texture_scale = 0.2
 energy = 0.8
+
+[node name="Hitbox" parent="." instance=ExtResource( 3 )]
+collision_mask = 48
+damage_obj = {
+"pure_damage": 3
+}
+
+[node name="Collider" parent="Hitbox" index="0"]
+shape = SubResource( 2 )
+
+[editable path="Hitbox"]

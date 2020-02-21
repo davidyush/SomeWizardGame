@@ -67,7 +67,6 @@ extents = Vector2( 4, 7 )
 radius = 48.0
 
 [node name="CreatureSkelet" instance=ExtResource( 1 )]
-MAX_HP = 0
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 7 )

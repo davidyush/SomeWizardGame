@@ -12,8 +12,7 @@ var SPEED = MAX_SPEED
 
 func _ready() -> void:
 	._ready()
-	var SPEED = MAX_SPEED
-	print(SPEED)
+	#var SPEED = MAX_SPEED
 
 func _on_DirectionTimer_timeout() -> void:
 	current_move = CreatureUtils.get_rand_elem(moves)
