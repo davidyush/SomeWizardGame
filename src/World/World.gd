@@ -12,9 +12,11 @@ const lims = {
 	"res://src/LevelsB/LevelB_02.tscn": [-64, -230, 688, 288]
 }
 
+
 func set_camera_limits(limits_arr: Array) -> void:
 	for i in 4:
 		camera.set_limit(i, limits_arr[i])
+
 
 func get_current_limits(lvl_position: Vector2, lvl_limits: Array) -> Array:
 	var result = lvl_limits.duplicate()
@@ -25,12 +27,14 @@ func get_current_limits(lvl_position: Vector2, lvl_limits: Array) -> Array:
 			result[i] += lvl_position.y
 	return result
 
+
 func _ready() -> void:
 	VisualServer.set_default_clear_color(Color.black)
 	MainInstances.Player.connect('hit_door', self, '_on_Player_hit_door')
 
-	#var current_limits = get_current_limits(currentLevel.global_position, lims["res://src/LevelsB/LevelB_00.tscn"])
-	#set_camera_limits(current_limits)
+	var current_limits = get_current_limits(currentLevel.global_position, lims["res://src/LevelsB/LevelB_00.tscn"])
+	set_camera_limits(current_limits)
+
 
 func change_levels(door):
 	var offset = currentLevel.position
@@ -43,8 +47,8 @@ func change_levels(door):
 	newLevel.position = door.position - exit_position
 	
 	#set limit camera
-	#var current_limits = get_current_limits(newLevel.position, lims[door.new_level_path])
-	#set_camera_limits(current_limits)
+	var current_limits = get_current_limits(newLevel.position, lims[door.new_level_path])
+	set_camera_limits(current_limits)
 
 
 func get_door_with_connection(notDoor, connection):

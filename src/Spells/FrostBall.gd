@@ -2,6 +2,7 @@ extends "res://src/Spells/Ball.gd"
 
 const Explosion = preload("res://src/Effects/FrostExplosion.tscn")
 
+# warning-ignore:unused_argument
 func _on_FrostBall_body_entered(body):
 	#print(body.name, body.global_position)
 	#var explosion = FrostExplosion.instance()

@@ -36,10 +36,12 @@ func _on_viewport_exited(viewport: Viewport) -> void:
 	._on_viewport_exited(viewport)
 
 
+# warning-ignore:unused_argument
 func _on_PlayerDetector_body_entered(body: Node) -> void:
 	state = CHASING
 
 
+# warning-ignore:unused_argument
 func _on_PlayerDetector_body_exited(body: Node) -> void:
 	state = WALKING
 

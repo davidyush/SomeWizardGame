@@ -31,11 +31,13 @@ func _physics_process(delta: float) -> void:
 	._physics_process(delta)
 
 
+# warning-ignore:unused_argument
 func _on_PlayerDetector_body_entered(body: Node) -> void:
 	state = STRIKING
 	strikeTimer.start()
 
 
+# warning-ignore:unused_argument
 func _on_PlayerDetector_body_exited(body: Node) -> void:
 	state = WALKING
 
@@ -55,8 +57,6 @@ func _on_StrikeTimer_timeout() -> void:
 
 
 func strike(delta: float, player: KinematicBody2D) -> void:
-	print('player_pos', player.global_position)
-	print('enem', self.global_position)
 	if can_fire == true and player != null:
 		sprite.flip_h = global_position > player.global_position
 		CreatureUtils.strike_to_target(player, self, delta, Bullet, 70)

@@ -19,6 +19,7 @@ smoothing_speed = 7.0
 [node name="UI" parent="." instance=ExtResource( 3 )]
 
 [node name="LevelB_00" parent="." instance=ExtResource( 5 )]
+position = Vector2( -0.03125, 0 )
 
 [node name="Wizard" parent="." instance=ExtResource( 2 )]
 position = Vector2( 680.999, -0.875034 )
