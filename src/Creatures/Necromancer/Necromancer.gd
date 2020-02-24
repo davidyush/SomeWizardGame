@@ -20,6 +20,7 @@ enum {
 	PORTAL
 }
 
+signal necromance_died
 
 func _ready() -> void:
 	._ready()
@@ -60,4 +61,8 @@ func set_eyes_coords():
 		eye_left.position.x = 0
 		eye_right.position.x = 4
 
+func dead() -> void:
+	emit_signal("necromance_died")
+	.dead()
+	
 

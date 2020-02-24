@@ -36,7 +36,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-target_stage = "res://src/Levels/LevelZero.tscn"
+target_stage = "res://src/World/World.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0

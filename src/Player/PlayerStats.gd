@@ -12,10 +12,10 @@ var max_mana = 20
 var mana = max_mana setget set_mana
 
 var max_hp_potions = 20
-var hp_potions = 10 setget set_hp_potions
+var hp_potions = 5 setget set_hp_potions
 
 var max_mana_potions = 20
-var mana_potions = 10 setget set_mana_potions
+var mana_potions = 5 setget set_mana_potions
 
 var coins = 0 setget set_coins
 

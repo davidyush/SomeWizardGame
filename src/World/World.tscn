@@ -24,6 +24,7 @@ position = Vector2( 2.09009, 3.18198 )
 
 [node name="Wizard" parent="." instance=ExtResource( 2 )]
 position = Vector2( 30.1071, -10.7745 )
+SPEED = 60
 
 [node name="CameraFollow" parent="Wizard" index="7"]
 remote_path = NodePath("../../WorldCamera")
