@@ -8,6 +8,7 @@ extents = Vector2( 8, 14 )
 [node name="Door" type="Area2D" groups=[
 "Door",
 ]]
+collision_layer = 2
 script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

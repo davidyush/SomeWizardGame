@@ -67,13 +67,13 @@ polygon = PoolVector2Array( 5, 8, 5, 7, -3, 7, -3, 8 )
 extents = Vector2( 4, 5 )
 
 [sub_resource type="CircleShape2D" id=6]
-radius = 47.0106
+radius = 78.0
 
 [node name="CreatureImp" instance=ExtResource( 1 )]
 script = ExtResource( 8 )
 MAX_HP = 30
-MAX_SPEED = 30
-acceleration = 2.0
+MAX_SPEED = 40
+acceleration = 1.4
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 9 )

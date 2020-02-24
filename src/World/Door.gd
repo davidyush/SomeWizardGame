@@ -7,5 +7,7 @@ var active = true
 
 func _on_Door_body_entered(Player) -> void:
 	if active == true:
-		Player.emit_signal('hit_door', self)
-		active = false
+		if "Wizard" in Player.name:
+			print(Player.name)
+			Player.emit_signal('hit_door', self)
+			active = false

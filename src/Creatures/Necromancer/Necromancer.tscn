@@ -86,7 +86,7 @@ polygon = PoolVector2Array( -7, 10, -7, 9, 5, 9, 5, 10 )
 extents = Vector2( 6, 7 )
 
 [sub_resource type="CircleShape2D" id=7]
-radius = 66.0076
+radius = 90.0056
 
 [sub_resource type="Gradient" id=8]
 offsets = PoolRealArray( 0, 0.329932, 0.738095, 0.792517, 1 )
@@ -158,9 +158,6 @@ position = Vector2( 0, 3 )
 shape = ExtResource( 3 )
 
 [node name="VisibilityNotifier2D" parent="." index="6"]
-visible = false
-
-[node name="PlayerDetector" parent="." index="11"]
 visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetector" index="0"]

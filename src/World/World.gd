@@ -7,9 +7,10 @@ onready var camera = $WorldCamera
 
 #should get this values dinamicaly
 const lims = {
-	"res://src/LevelsB/LevelB_00.tscn": [-10, -160, 750, 150],
+	"res://src/LevelsB/LevelB_00.tscn": [-8, -160, 752, 150],
 	"res://src/LevelsB/LevelB_01.tscn": [-48, -24, 416, 336],
-	"res://src/LevelsB/LevelB_02.tscn": [-64, -230, 688, 288]
+	"res://src/LevelsB/LevelB_02.tscn": [-64, -230, 688, 288],
+	"res://src/LevelsB/LevelB_Boss1.tscn": [-64, -20, 262, 256]
 }
 
 

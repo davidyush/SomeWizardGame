@@ -1,5 +1,7 @@
 extends Sprite
 
+onready var animPlayer = $AnimationPlayer
+
 func _ready() -> void:
 	var current_frame = get_rand_frame()
 	frame = current_frame
@@ -9,3 +11,7 @@ func get_rand_frame() -> int:
 	if curr_frame != 4 && curr_frame != 5 && curr_frame != 7:
 		return curr_frame
 	return get_rand_frame()
+
+
+func _on_Timer_timeout() -> void:
+	animPlayer.play("disapear")

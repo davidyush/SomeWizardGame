@@ -65,7 +65,7 @@ color = Color( 0.92549, 0.929412, 0.258824, 1 )
 
 [node name="Hitbox" parent="." index="4"]
 damage_obj = {
-"pure_damage": 7
+"pure_damage": 10
 }
 
 [node name="Collider" parent="Hitbox" index="0"]

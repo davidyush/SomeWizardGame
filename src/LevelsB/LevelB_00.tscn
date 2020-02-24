@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/LevelsB/LevelTemplateB.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/World/Spikes.tscn" type="PackedScene" id=2]
@@ -10,7 +10,10 @@
 [ext_resource path="res://src/World/Columnus.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/World/Door.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Connections/b00_b01.tres" type="Resource" id=10]
-[ext_resource path="res://src/Creatures/IceZombie/CreatureIceZombie.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Creatures/Muddy/CreatureMuddy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Creatures/Imp/CreatureImp.tscn" type="PackedScene" id=12]
+[ext_resource path="res://FireWall.tscn" type="PackedScene" id=13]
+[ext_resource path="res://WaterWall.tscn" type="PackedScene" id=14]
 
 [node name="LevelB_00" instance=ExtResource( 1 )]
 
@@ -72,24 +75,7 @@ position = Vector2( 456, 7 )
 [node name="Spikes10" parent="Spikes" index="9" instance=ExtResource( 2 )]
 position = Vector2( 472, -8 )
 
-[node name="Creatures" type="Node2D" parent="." index="3"]
-
-[node name="CreatureGoblin" parent="Creatures" index="0" instance=ExtResource( 3 )]
-position = Vector2( 343, 104 )
-
-[node name="CreatureGoblin2" parent="Creatures" index="1" instance=ExtResource( 3 )]
-position = Vector2( 453, 107 )
-
-[node name="CreatureGoblin3" parent="Creatures" index="2" instance=ExtResource( 3 )]
-position = Vector2( 462, -117 )
-
-[node name="CreatureGoblin4" parent="Creatures" index="3" instance=ExtResource( 3 )]
-position = Vector2( 342, -116 )
-
-[node name="CreatureIceZombie" parent="Creatures" index="4" instance=ExtResource( 11 )]
-position = Vector2( 600, -2 )
-
-[node name="Items" type="Node2D" parent="." index="4"]
+[node name="Items" type="Node2D" parent="." index="3"]
 
 [node name="HealthPotion" parent="Items" index="0" instance=ExtResource( 5 )]
 position = Vector2( 31, -82 )
@@ -151,7 +137,7 @@ position = Vector2( 289, -112 )
 [node name="Coin8" parent="Items" index="19" instance=ExtResource( 6 )]
 position = Vector2( 272, -112 )
 
-[node name="Torches" type="Node2D" parent="." index="5"]
+[node name="Torches" type="Node2D" parent="." index="4"]
 
 [node name="Torch" parent="Torches" index="0" instance=ExtResource( 7 )]
 position = Vector2( 96, -43 )
@@ -177,7 +163,7 @@ position = Vector2( 559, -43 )
 [node name="Torch6" parent="Torches" index="7" instance=ExtResource( 7 )]
 position = Vector2( 687, -42 )
 
-[node name="Columnuses" type="Node2D" parent="." index="6"]
+[node name="Columnuses" type="Node2D" parent="." index="5"]
 
 [node name="Columnus" parent="Columnuses" index="0" instance=ExtResource( 8 )]
 position = Vector2( 287, -23 )
@@ -197,7 +183,50 @@ position = Vector2( 512, -87 )
 [node name="Columnus2" parent="Columnuses" index="5" instance=ExtResource( 8 )]
 position = Vector2( 289, 40 )
 
-[node name="Door" parent="." index="7" instance=ExtResource( 9 )]
-position = Vector2( 747, -1 )
+[node name="Door" parent="." index="6" instance=ExtResource( 9 )]
+position = Vector2( 731, -1 )
 connection = ExtResource( 10 )
 new_level_path = "res://src/LevelsB/LevelB_01.tscn"
+
+[node name="Creatures" type="Node2D" parent="." index="7"]
+
+[node name="CreatureGoblin" parent="Creatures" index="0" instance=ExtResource( 3 )]
+position = Vector2( 343, 104 )
+
+[node name="CreatureGoblin2" parent="Creatures" index="1" instance=ExtResource( 3 )]
+position = Vector2( 453, 107 )
+
+[node name="CreatureGoblin3" parent="Creatures" index="2" instance=ExtResource( 3 )]
+position = Vector2( 462, -117 )
+
+[node name="CreatureGoblin4" parent="Creatures" index="3" instance=ExtResource( 3 )]
+position = Vector2( 342, -116 )
+
+[node name="CreatureMuddy" parent="Creatures" index="4" instance=ExtResource( 11 )]
+position = Vector2( 517, 90 )
+
+[node name="CreatureMuddy2" parent="Creatures" index="5" instance=ExtResource( 11 )]
+position = Vector2( 284, 84 )
+
+[node name="CreatureMuddy3" parent="Creatures" index="6" instance=ExtResource( 11 )]
+position = Vector2( 314, -103 )
+
+[node name="CreatureMuddy4" parent="Creatures" index="7" instance=ExtResource( 11 )]
+position = Vector2( 487, -99 )
+
+[node name="CreatureImp" parent="Creatures" index="8" instance=ExtResource( 12 )]
+position = Vector2( 154, -28 )
+
+[node name="Fontans" type="Node2D" parent="." index="8"]
+
+[node name="FireWall" parent="Fontans" index="0" instance=ExtResource( 13 )]
+position = Vector2( 120, -56 )
+
+[node name="FireWall2" parent="Fontans" index="1" instance=ExtResource( 13 )]
+position = Vector2( 424, -151 )
+
+[node name="FaterWall" parent="Fontans" index="2" instance=ExtResource( 14 )]
+position = Vector2( 216, -56 )
+
+[node name="FaterWall2" parent="Fontans" index="3" instance=ExtResource( 14 )]
+position = Vector2( 424, 56 )

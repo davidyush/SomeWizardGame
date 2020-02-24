@@ -35,7 +35,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 35.0
+radius = 19.0263
 
 [node name="Sprite" type="Sprite"]
 texture = ExtResource( 2 )
@@ -53,6 +53,7 @@ texture_scale = 0.2
 energy = 0.8
 
 [node name="Hitbox" parent="." instance=ExtResource( 3 )]
+visible = false
 collision_mask = 48
 damage_obj = {
 "pure_damage": 3

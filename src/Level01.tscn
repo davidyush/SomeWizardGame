@@ -6,7 +6,7 @@
 [ext_resource path="res://src/Blood.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Torch.tscn" type="PackedScene" id=6]
 [ext_resource path="res://FireWall.tscn" type="PackedScene" id=7]
-[ext_resource path="res://FaterWall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://WaterWall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/shader.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Wizard.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/MarginContainer.gd" type="Script" id=13]
@@ -15,6 +15,7 @@
 [ext_resource path="res://src/Level01.gd" type="Script" id=16]
 [ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=19]
 [ext_resource path="res://src/World/Spikes.tscn" type="PackedScene" id=21]
+
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;

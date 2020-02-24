@@ -4,7 +4,7 @@
 [ext_resource path="res://src/World/Columnus.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Creatures/Swampy/CreatureSwampy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Torch.tscn" type="PackedScene" id=4]
-[ext_resource path="res://FaterWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://WaterWall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/World/Spikes.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Creatures/OrcShaman/CreatureOrcShaman.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Items/ManaPotion.tscn" type="PackedScene" id=8]
@@ -12,6 +12,7 @@
 [ext_resource path="res://src/Items/Coin.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/NextLevel.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Creatures/IceZombie/CreatureIceZombie.tscn" type="PackedScene" id=12]
+
 
 [node name="LevelZero" instance=ExtResource( 1 )]
 

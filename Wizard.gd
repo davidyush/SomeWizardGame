@@ -127,12 +127,12 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("drink_hp_potion"):
 		if PlayerStats.hp_potions > 0:
 			PlayerStats.hp_potions -= 1
-			PlayerStats.health += 2
+			PlayerStats.health += 7
 		
 	if event.is_action_pressed("drink_mana_potion"):
 		if PlayerStats.mana_potions > 0:
 			PlayerStats.mana_potions -= 1
-			PlayerStats.mana += 5
+			PlayerStats.mana += 10
 			
 	if event.is_action_pressed("make_hp_potion"):
 		if PlayerStats.coins > 1:

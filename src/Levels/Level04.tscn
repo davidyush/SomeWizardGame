@@ -8,7 +8,7 @@
 [ext_resource path="res://Wizard.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://FireWall.tscn" type="PackedScene" id=8]
-[ext_resource path="res://FaterWall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://WaterWall.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Torch.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Levels/Level04.gd" type="Script" id=11]
 [ext_resource path="res://src/World/Spikes.tscn" type="PackedScene" id=12]
@@ -18,6 +18,7 @@
 [ext_resource path="res://src/Enemies/Goblin.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/World/Columnus.tscn" type="PackedScene" id=17]
 [ext_resource path="res://default_font.tres" type="DynamicFont" id=18]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "end"
